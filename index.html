@@ -11,7 +11,7 @@
         <!-- Start Page -->
         <div id="startPage" class="page active">
             <h1>Quiz for Mia</h1>
-            <p class="description">Hi, cutie this is a quick quiz</p>
+            <p class="description">Hi, cutie, this is a quick quiz</p>
             <p class="details">Test your knowledge with a few simple questions about us. Select the correct answer to move to the next question. If you get all of them right, you will get a gift 😉</p>
             <button class="btn btn-primary" onclick="startQuiz()">Start Quiz</button>
         </div>
@@ -39,12 +39,18 @@
         <div id="congratsPage" class="page">
             <canvas id="confetti"></canvas>
             <div class="congrats-content">
-                <h1>🎉 Congrats! 🎉</h1>
-                <p class="congrats-message">You Passed the Test!</p>
-                <div class="congrats-image">
-                    <img src="celebration.jpg" alt="Celebration">
+                <div class="gift-box-container">
+                    <div id="giftBox" class="gift-box">
+                        <div id="giftLid" class="gift-lid">
+                            <div class="lid-top"></div>
+                            <div class="lid-ribbon"></div>
+                        </div>
+                        <div class="gift-body"></div>
+                    </div>
                 </div>
-                <button class="btn btn-primary" onclick="restartQuiz()">Retake Quiz</button>
+                <h1>🎉 Congrats, cutie! 🎉</h1>
+                <p class="congrats-message">You are so smart! Here's a little reward—please open your first gift box!</p>
+                <button class="btn btn-primary" onclick="moveToNextChapter()">Move to the Next Challenge</button>
             </div>
         </div>
 
@@ -53,10 +59,19 @@
             <h1>Quiz Complete!</h1>
             <p class="result-message">Great job! You answered all questions correctly.</p>
             <div class="result-stats">
-                <p>Total Questions: <strong>3</strong></p>
+                <p>Total Questions: <strong id="totalQuestions">3</strong></p>
                 <p>Correct Answers: <strong id="correctCount">3</strong></p>
             </div>
             <button class="btn btn-primary" onclick="goToCongratsPage()">View Celebration</button>
+        </div>
+
+        <!-- Chapter 2 Intro Page -->
+        <div id="chapter2IntroPage" class="page">
+            <div class="intro-content">
+                <h1>Chapter 2: The Challenge Awaits! 🎯</h1>
+                <p class="intro-message">Hi cutie, I know what you are going to say—"Huh, it is so easy. I am so smart, this is nothing, haha!" Well, you do deserve a bit more praise, and I know you are smart. Now take on a second challenge. It's a little bit harder. If you get them all right, you will get another gift! 🎁</p>
+                <button class="btn btn-primary" onclick="startChapter2Quiz()">Begin Chapter 2</button>
+            </div>
         </div>
     </div>
 
