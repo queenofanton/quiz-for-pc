@@ -53,7 +53,7 @@ const chapter2Questions = [
         ]
     },
     {
-        question: "Do you remember what color the card game box was—the one we played together and that I later gave to you? 💕",
+        question: "Do you remember what color the card game box was—the one we played together and that I later gave to you? 🎲💕",
         answers: [
             { text: "Pink", correct: true },
             { text: "Yellow", correct: true },
@@ -74,6 +74,21 @@ let currentChapter = 1;
 let quizQuestions = chapter1Questions;
 let currentQuestionIndex = 0;
 let correctAnswers = 0;
+
+function goToPathSelection() {
+    showPage('pathSelectionPage');
+}
+
+function choosePath(pathNumber) {
+    const pathMessage = document.getElementById('pathMessage');
+    pathMessage.textContent = "Oh you chose the easier one, good start! Let's goooo!";
+    pathMessage.style.display = 'block';
+    
+    // Start quiz after showing the message for 2 seconds
+    setTimeout(() => {
+        startQuiz();
+    }, 2000);
+}
 
 function startQuiz() {
     currentChapter = 1;
