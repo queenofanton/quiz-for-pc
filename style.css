@@ -180,6 +180,60 @@ body {
     z-index: 10;
 }
 
+.gift-box-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    perspective: 1000px;
+}
+
+.gift-box {
+    position: relative;
+    width: 120px;
+    height: 100px;
+}
+
+.gift-body {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #FF6B9D 0%, #FF1654 100%);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(255, 22, 84, 0.3);
+}
+
+.gift-lid {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform-origin: bottom center;
+}
+
+.gift-lid.open {
+    transform: translateX(-50%) rotateX(-120deg);
+}
+
+.lid-top {
+    width: 100%;
+    height: 30px;
+    background: linear-gradient(135deg, #FFB347 0%, #FFA500 100%);
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.lid-ribbon {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 35px;
+    background: linear-gradient(90deg, #FFD700 0%, #FFC700 100%);
+    border-radius: 50%;
+}
+
 .congrats-content h1 {
     color: #667eea;
     font-size: 3em;
@@ -197,22 +251,30 @@ body {
 }
 
 .congrats-message {
-    font-size: 1.8em;
+    font-size: 1.2em;
     color: #764ba2;
     margin-bottom: 30px;
     font-weight: 600;
+    line-height: 1.6;
 }
 
-.congrats-image {
+/* Chapter 2 Intro Page Styles */
+#chapter2IntroPage {
+    text-align: center;
+}
+
+.intro-content h1 {
+    color: #667eea;
+    font-size: 2.5em;
+    margin-bottom: 25px;
+}
+
+.intro-message {
+    font-size: 1.1em;
+    color: #666;
+    line-height: 1.8;
     margin-bottom: 30px;
-    max-width: 100%;
-}
-
-.congrats-image img {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 8px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
 }
 
 /* Results Page Styles */
@@ -294,6 +356,14 @@ body {
     }
 
     .congrats-message {
-        font-size: 1.4em;
+        font-size: 1em;
+    }
+
+    .intro-content h1 {
+        font-size: 2em;
+    }
+
+    .intro-message {
+        font-size: 1em;
     }
 }
