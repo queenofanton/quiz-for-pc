@@ -18,6 +18,7 @@ const chapter1Questions = [
     },
     {
         question: "In which bar is this photo taken?",
+        image: "chapter1Q3.jpg",
         answers: [
             { text: "YSY", correct: false },
             { text: "Que", correct: false },
@@ -31,13 +32,14 @@ const chapter2Questions = [
     {
         question: "Do you remember the first message I sent you after we matched? ❤️",
         answers: [
-            { text: "Hi cutie", correct: false },
-            { text: "Hi, cute pic", correct: true },
-            { text: "Hi there", correct: false }
+            { text: "Hi cutie", correct: false, image: "chapter2Q1.jpeg" },
+            { text: "Hi, cute pic", correct: true, image: "chapter2Q1.jpeg" },
+            { text: "Hi there", correct: false, image: "chapter2Q1.jpeg" }
         ]
     },
     {
         question: "What's the name of the bar I took you to on this date? 🍸",
+        image: "chapter2Q2.jpg",
         answers: [
             { text: "KINK Bar & Restaurant", correct: false },
             { text: "YSY", correct: false },
@@ -46,6 +48,7 @@ const chapter2Questions = [
     },
     {
         question: "Before this photo was taken, we walked past a restaurant. You pointed it out because you wanted to show me that you'd read my interviews and remembered the places I'd written about. Do you remember its name? 🥰",
+        image: "chapter2Q3.jpg",
         answers: [
             { text: "Quê", correct: false },
             { text: "JOMO", correct: true },
@@ -54,6 +57,7 @@ const chapter2Questions = [
     },
     {
         question: "Do you remember what color the card game box was—the one we played together and that I later gave to you? 🎲💕",
+        image: "chapter2Q4.jpg",
         answers: [
             { text: "Pink", correct: true },
             { text: "Yellow", correct: true },
@@ -114,6 +118,16 @@ function loadQuestion() {
     document.getElementById('feedbackMessage').textContent = '';
     document.getElementById('feedbackMessage').className = 'feedback';
     
+    // Display image if present
+    const questionImageContainer = document.getElementById('questionImageContainer');
+    if (question.image) {
+        questionImageContainer.innerHTML = `<img src="${question.image}" alt="Question Image" class="question-image">`;
+        questionImageContainer.style.display = 'block';
+    } else {
+        questionImageContainer.innerHTML = '';
+        questionImageContainer.style.display = 'none';
+    }
+    
     // Render answers
     const answersContainer = document.getElementById('answersContainer');
     answersContainer.innerHTML = '';
@@ -121,7 +135,14 @@ function loadQuestion() {
     question.answers.forEach((answer, index) => {
         const button = document.createElement('button');
         button.className = 'answer-btn';
-        button.textContent = answer.text;
+        
+        // If answer has an image, create image-based button
+        if (answer.image) {
+            button.innerHTML = `<img src="${answer.image}" alt="${answer.text}" class="answer-image"><span>${answer.text}</span>`;
+        } else {
+            button.textContent = answer.text;
+        }
+        
         button.onclick = () => checkAnswer(index, answer.correct);
         answersContainer.appendChild(button);
     });
