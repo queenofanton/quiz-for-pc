@@ -1,5 +1,5 @@
-// Quiz Questions
-const quizQuestions = [
+// Quiz Questions - Chapter 1
+const chapter1Questions = [
     {
         question: "When was our first date?",
         answers: [
@@ -26,10 +26,58 @@ const quizQuestions = [
     }
 ];
 
+// Quiz Questions - Chapter 2
+const chapter2Questions = [
+    {
+        question: "Do you remember the first message I sent you after we matched? ❤️",
+        answers: [
+            { text: "Hi cutie", correct: true },
+            { text: "Hi, cute pic", correct: false },
+            { text: "Hi there", correct: false }
+        ]
+    },
+    {
+        question: "What's the name of the bar I took you to on this date? 🍸",
+        answers: [
+            { text: "KINK Bar & Restaurant", correct: true },
+            { text: "YSY", correct: false },
+            { text: "Timber Doodle", correct: false }
+        ]
+    },
+    {
+        question: "Before this photo was taken, we walked past a restaurant. You pointed it out because you wanted to show me that you'd read my interviews and remembered the places I'd written about. Do you remember its name? 🥰",
+        answers: [
+            { text: "Quê", correct: true },
+            { text: "JOMO", correct: false },
+            { text: "Almi", correct: false }
+        ]
+    },
+    {
+        question: "Do you remember what color the card game box was—the one we played together and that I later gave to you? 🎲💕",
+        answers: [
+            { text: "Pink", correct: true },
+            { text: "Yellow", correct: false },
+            { text: "Red", correct: false }
+        ]
+    },
+    {
+        question: "Where is this photo taken? 📍",
+        answers: [
+            { text: "KINK Bar & Restaurant", correct: true },
+            { text: "YSY", correct: false },
+            { text: "Timber Doodle", correct: false }
+        ]
+    }
+];
+
+let currentChapter = 1;
+let quizQuestions = chapter1Questions;
 let currentQuestionIndex = 0;
 let correctAnswers = 0;
 
 function startQuiz() {
+    currentChapter = 1;
+    quizQuestions = chapter1Questions;
     currentQuestionIndex = 0;
     correctAnswers = 0;
     showPage('quizPage');
@@ -115,6 +163,20 @@ function showResults() {
 function goToCongratsPage() {
     showPage('congratsPage');
     startConfetti();
+    startGiftBoxAnimation();
+}
+
+function moveToNextChapter() {
+    currentChapter = 2;
+    quizQuestions = chapter2Questions;
+    currentQuestionIndex = 0;
+    correctAnswers = 0;
+    showPage('chapter2IntroPage');
+}
+
+function startChapter2Quiz() {
+    showPage('quizPage');
+    loadQuestion();
 }
 
 function restartQuiz() {
@@ -198,4 +260,16 @@ function startConfetti() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
     });
+}
+
+// Gift Box Animation
+function startGiftBoxAnimation() {
+    const giftLid = document.getElementById('giftLid');
+    const giftBox = document.getElementById('giftBox');
+    
+    // Trigger the opening animation after 1 second
+    setTimeout(() => {
+        giftLid.classList.add('open');
+        giftBox.classList.add('open');
+    }, 1000);
 }
