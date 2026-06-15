@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AP Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Start Page -->
+        <div id="startPage" class="page active">
+            <h1>Quiz for Mia</h1>
+            <p class="description">Hi, cutie this is a quick quiz</p>
+            <p class="details">Test your knowledge with a few simple questions about us. Select the correct answer to move to the next question. If you get all of them right, you will get a gift 😉</p>
+            <button class="btn btn-primary" onclick="startQuiz()">Start Quiz</button>
+        </div>
+
+        <!-- Quiz Page -->
+        <div id="quizPage" class="page">
+            <div class="quiz-header">
+                <h2 id="questionNumber">Question 1</h2>
+                <div class="progress-bar">
+                    <div id="progressFill" class="progress-fill"></div>
+                </div>
+            </div>
+
+            <div class="quiz-content">
+                <p id="questionText" class="question"></p>
+                <div id="answersContainer" class="answers-container"></div>
+            </div>
+
+            <div class="quiz-footer">
+                <p id="feedbackMessage" class="feedback"></p>
+            </div>
+        </div>
+
+        <!-- Congratulations Page -->
+        <div id="congratsPage" class="page">
+            <canvas id="confetti"></canvas>
+            <div class="congrats-content">
+                <h1>🎉 Congrats! 🎉</h1>
+                <p class="congrats-message">You Passed the Test!</p>
+                <div class="congrats-image">
+                    <img src="celebration.jpg" alt="Celebration">
+                </div>
+                <button class="btn btn-primary" onclick="restartQuiz()">Retake Quiz</button>
+            </div>
+        </div>
+
+        <!-- Results Page -->
+        <div id="resultsPage" class="page">
+            <h1>Quiz Complete!</h1>
+            <p class="result-message">Great job! You answered all questions correctly.</p>
+            <div class="result-stats">
+                <p>Total Questions: <strong>3</strong></p>
+                <p>Correct Answers: <strong id="correctCount">3</strong></p>
+            </div>
+            <button class="btn btn-primary" onclick="goToCongratsPage()">View Celebration</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
