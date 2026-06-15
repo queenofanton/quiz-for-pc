@@ -156,6 +156,7 @@ function checkAnswer(index, isCorrect) {
 }
 
 function showResults() {
+    document.getElementById('totalQuestions').textContent = quizQuestions.length;
     document.getElementById('correctCount').textContent = correctAnswers;
     showPage('resultsPage');
 }
