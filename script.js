@@ -17,7 +17,7 @@ const chapter1Questions = [
         ]
     },
     {
-        question: "Which restaurant did I take you to after we met up at Schönhauser Allee after my therapy?",
+        question: "In which bar is this photo taken?",
         answers: [
             { text: "YSY", correct: false },
             { text: "Que", correct: false },
@@ -31,41 +31,41 @@ const chapter2Questions = [
     {
         question: "Do you remember the first message I sent you after we matched? ❤️",
         answers: [
-            { text: "Hi cutie", correct: true },
-            { text: "Hi, cute pic", correct: false },
+            { text: "Hi cutie", correct: false },
+            { text: "Hi, cute pic", correct: true },
             { text: "Hi there", correct: false }
         ]
     },
     {
         question: "What's the name of the bar I took you to on this date? 🍸",
         answers: [
-            { text: "KINK Bar & Restaurant", correct: true },
+            { text: "KINK Bar & Restaurant", correct: false },
             { text: "YSY", correct: false },
-            { text: "Timber Doodle", correct: false }
+            { text: "Timber Doodle", correct: true }
         ]
     },
     {
         question: "Before this photo was taken, we walked past a restaurant. You pointed it out because you wanted to show me that you'd read my interviews and remembered the places I'd written about. Do you remember its name? 🥰",
         answers: [
-            { text: "Quê", correct: true },
-            { text: "JOMO", correct: false },
+            { text: "Quê", correct: false },
+            { text: "JOMO", correct: true },
             { text: "Almi", correct: false }
         ]
     },
     {
-        question: "Do you remember what color the card game box was—the one we played together and that I later gave to you? 🎲💕",
+        question: "Do you remember what color the card game box was—the one we played together and that I later gave to you? 💕",
         answers: [
             { text: "Pink", correct: true },
-            { text: "Yellow", correct: false },
-            { text: "Red", correct: false }
+            { text: "Yellow", correct: true },
+            { text: "Red", correct: true }
         ]
     },
     {
         question: "Where is this photo taken? 📍",
         answers: [
-            { text: "KINK Bar & Restaurant", correct: true },
-            { text: "YSY", correct: false },
-            { text: "Timber Doodle", correct: false }
+            { text: "Nothing Out of The Ordinary Cafe", correct: true },
+            { text: "AO Cafe", correct: false },
+            { text: "Cebe Cafe", correct: false }
         ]
     }
 ];
